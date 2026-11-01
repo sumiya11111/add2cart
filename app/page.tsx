@@ -4,22 +4,13 @@ import { PROJECTS } from "@/lib/projects";
 import HeroBackground from "@/components/HeroBackground";
 import WorkStack from "@/components/WorkStack";
 import Reveal from "@/components/Reveal";
-import LetterReveal from "@/components/LetterReveal";
-import BlueProcess from "@/components/BlueProcess";
 import Spotlight from "@/components/Spotlight";
-import DirectionalReveal from "@/components/DirectionalReveal";
 import CodeWindow from "@/components/CodeWindow";
 import CTAButton from "@/components/CTAButton";
 import ServiceVisual, { type VisualKind } from "@/components/ServiceVisuals";
 import { ArrowRight } from "@/components/Arrow";
 
-const SERVICES: {
-  visual: VisualKind;
-  title: string;
-  text: string;
-  tags: string[];
-  wide?: boolean;
-}[] = [
+const SERVICES: { visual: VisualKind; title: string; text: string; tags: string[]; wide?: boolean }[] = [
   {
     visual: "store",
     title: "Custom stores on Next.js",
@@ -53,39 +44,16 @@ const SERVICES: {
   },
 ];
 
-const STACK = [
-  "Next.js", "Shopify", "React", "TypeScript",
-  "Tailwind CSS", "Liquid", "Vercel"
-];
+const STACK = ["Next.js", "Shopify", "React", "TypeScript", "Tailwind CSS", "Liquid", "Vercel"];
 
 const WHY_NEXT = [
-  {
-    icon: "fast",
-    title: "Next.js for full control",
-    text: "A custom store, built from scratch. Fast pages and any feature you can think of.",
-  },
-  {
-    icon: "bag",
-    title: "Shopify for easy running",
-    text: "Add products, take orders and see sales yourself, all from one simple dashboard.",
-  },
-  {
-    icon: "search",
-    title: "Fast and easy to find",
-    text: "Both load fast, and every product page is built so Google can find it.",
-  },
+  { icon: "fast", title: "Next.js for full control", text: "A custom store, built from scratch. Fast pages and any feature you can think of." },
+  { icon: "bag", title: "Shopify for easy running", text: "Add products, take orders and see sales yourself, all from one simple dashboard." },
+  { icon: "search", title: "Fast and easy to find", text: "Both load fast, and every product page is built so Google can find it." },
 ];
 
-const LOCAL_A = [
-  "Cash on delivery", "bKash", "Nagad", "Card payments",
-  "Steadfast", "Pathao", "RedX", "Order tracking"
-];
-
-const LOCAL_B = [
-  "WhatsApp chat", "Messenger chat", "Bank offers",
-  "Telco offers", "Bangla and English", "Bulk orders",
-  "Size guides", "Facebook Pixel"
-];
+const LOCAL_A = ["Cash on delivery", "bKash", "Nagad", "Card payments", "Steadfast", "Pathao", "RedX", "Order tracking"];
+const LOCAL_B = ["WhatsApp chat", "Messenger chat", "Bank offers", "Telco offers", "Bangla and English", "Bulk orders", "Size guides", "Facebook Pixel"];
 
 const ICONS: Record<string, React.ReactNode> = {
   chat: <path d="M4 5h16v11H8l-4 4V5Z" />,
@@ -100,16 +68,7 @@ const ICONS: Record<string, React.ReactNode> = {
 function Icon({ name }: { name: string }) {
   return (
     <span className="grid size-11 shrink-0 place-items-center rounded-xl border border-line-2 bg-accent/10 text-accent">
-      <svg
-        viewBox="0 0 24 24"
-        className="size-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
+      <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         {ICONS[name]}
       </svg>
     </span>
@@ -117,26 +76,10 @@ function Icon({ name }: { name: string }) {
 }
 
 const STEPS = [
-  {
-    icon: "chat",
-    title: "Talk",
-    text: "We chat on WhatsApp. We learn what you sell and who buys it.",
-  },
-  {
-    icon: "plan",
-    title: "Plan",
-    text: "We map the pages, features and look. You get a clear price and timeline.",
-  },
-  {
-    icon: "build",
-    title: "Build",
-    text: "We design and build it. You see it and give notes before launch.",
-  },
-  {
-    icon: "launch",
-    title: "Launch",
-    text: "Your site goes live, ready for orders. We stay with you after launch.",
-  },
+  { icon: "chat", title: "Talk", text: "We chat on WhatsApp. We learn what you sell and who buys it." },
+  { icon: "plan", title: "Plan", text: "We map the pages, features and look. You get a clear price and timeline." },
+  { icon: "build", title: "Build", text: "We design and build it. You see it and give notes before launch." },
+  { icon: "launch", title: "Launch", text: "Your site goes live, ready for orders. We stay with you after launch." },
 ];
 
 function Pill({ children }: { children: React.ReactNode }) {
@@ -164,10 +107,7 @@ export default function Home() {
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_55%_at_50%_30%,rgba(10,10,11,0.85),transparent_75%)]"
         />
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-ink to-transparent"
-        />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-ink to-transparent" />
 
         <div className="wrap flex flex-1 flex-col justify-center pb-16 pt-32 md:pt-36">
           <Reveal>
@@ -182,24 +122,19 @@ export default function Home() {
 
           <Reveal delay={0.08}>
             <h1 className="mt-8 max-w-[14ch] text-[clamp(3rem,9.2vw,8.75rem)] font-semibold leading-[0.92] tracking-[-0.055em]">
-              <LetterReveal>We build brands,</LetterReveal>{" "}
-              <LetterReveal className="serif-i text-accent" delay={350}>
-                not just websites.
-              </LetterReveal>
+              We build online stores <span className="serif-i text-accent">that sell.</span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.16}>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/75 md:text-xl">
-              add2cart is a web studio in Dhaka. We design and build fast,
-              custom stores on Next.js and Shopify for brands that want more orders.
+              add2cart is a web studio in Dhaka. We design and build fast, custom stores on Next.js and Shopify for brands that want more orders.
             </p>
           </Reveal>
 
           <Reveal delay={0.24}>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <CTAButton size="lg" />
-
               <Link
                 href="#work"
                 className="group inline-flex h-14 items-center gap-2 rounded-full border border-line-2 bg-ink/30 px-8 text-base text-cream backdrop-blur transition-colors hover:border-cream/40"
@@ -211,317 +146,175 @@ export default function Home() {
           </Reveal>
         </div>
 
+        {/* ============ CONTINUOUS STORE MARQUEE ============ */}
         <div className="wrap pb-8">
-          <div className="flex flex-col gap-4 border-t border-line pt-6 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <span className="eyebrow">Stores we built</span>
-              {PROJECTS.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/work/${p.slug}`}
-                  className="font-mono text-sm text-cream/70 transition-colors hover:text-accent"
-                >
-                  {p.domain}
-                </Link>
-              ))}
+          <div className="flex items-center gap-5 overflow-hidden rounded-full border border-line-2 bg-ink/40 px-5 py-4 backdrop-blur md:gap-8 md:px-7">
+            <span className="eyebrow shrink-0">Stores we built</span>
+
+            <div className="fade-x min-w-0 flex-1 overflow-hidden">
+              <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+                {[0, 1].map((copy) => (
+                  <div
+                    key={copy}
+                    aria-hidden={copy === 1}
+                    className="flex shrink-0 items-center gap-9 pr-9 md:gap-14 md:pr-14"
+                  >
+                    {PROJECTS.map((p) => (
+                      <Link
+                        key={`${copy}-${p.slug}`}
+                        href={`/work/${p.slug}`}
+                        tabIndex={copy === 1 ? -1 : 0}
+                        className="group inline-flex shrink-0 items-center gap-3 font-mono text-sm text-cream/75 transition-colors duration-300 hover:text-white"
+                      >
+                        <span className="size-1.5 shrink-0 rounded-full bg-accent shadow-[0_0_8px_rgba(61,123,255,0.55)] transition-transform duration-300 group-hover:scale-150" />
+                        <span>{p.domain}</span>
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
-            <span className="eyebrow hidden md:inline">
-              Move your mouse
-            </span>
+
+            <span className="eyebrow hidden shrink-0 md:inline">Move your mouse</span>
           </div>
         </div>
       </section>
 
       {/* ============ WORK ============ */}
-      <section id="work" className="scroll-mt-20 pt-24 md:pt-36">
+      <section id="work" className="scroll-mt-20 pt-12 md:pt-16">
         <div className="wrap">
-          <div className="mb-14 grid gap-6 md:mb-20 md:grid-cols-[1.4fr_1fr] md:items-end">
+          <div className="mb-8 md:mb-10">
             <Reveal>
-              <div className="eyebrow mb-5">
-                Selected work
-              </div>
-
-              <h2 className="text-[clamp(2.5rem,6vw,5.25rem)] font-semibold leading-[0.95] tracking-[-0.045em]">
-                Real stores,{" "}
-                <span className="serif-i text-cream/60">
-                  live right now.
-                </span>
+              <div className="eyebrow mb-4">Selected work</div>
+              <h2 className="text-[clamp(2.25rem,5vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.045em]">
+                Real stores, <span className="serif-i text-cream/60">live right now.</span>
               </h2>
             </Reveal>
-
-            <Reveal delay={0.1}>
-              <p className="max-w-md text-lg leading-relaxed text-muted md:justify-self-end">
-                A clothing brand, a tailor and a handicraft store.
-                Each one is built around how that brand sells.
-              </p>
-            </Reveal>
           </div>
-
           <WorkStack projects={PROJECTS} />
         </div>
       </section>
 
       {/* ============ SERVICES ============ */}
-      <section
-        id="services"
-        className="relative scroll-mt-20 overflow-hidden py-24 md:py-36"
-      >
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-40 top-20 size-[450px] rounded-full bg-blue-600/[0.07] blur-[130px]"
-        />
+      <section id="services" className="scroll-mt-20 py-24 md:py-36">
+        <div className="wrap">
+          <Reveal>
+            <div className="eyebrow mb-5">What we build</div>
+            <h2 className="max-w-3xl text-[clamp(2.25rem,5vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.045em]">
+              One studio. <span className="serif-i text-cream/60">Every kind of site</span> a brand needs.
+            </h2>
+          </Reveal>
 
-        <div className="wrap relative">
-          <div className="grid gap-6 md:grid-cols-[1.3fr_0.7fr] md:items-end">
-            <Reveal>
-              <div className="eyebrow mb-5 text-blue-400">
-                What we build
-              </div>
-
-              <h2 className="max-w-4xl text-[clamp(2.6rem,6.5vw,5.5rem)] font-semibold leading-[0.94] tracking-[-0.06em]">
-                <LetterReveal>One studio.</LetterReveal>
-                <br />
-                <LetterReveal
-                  className="serif-i font-normal text-white/55"
-                  delay={200}
-                >
-                  Every kind of site
-                </LetterReveal>{" "}
-                <LetterReveal delay={420}>
-                  a brand needs.
-                </LetterReveal>
-              </h2>
-            </Reveal>
-
-            <Reveal delay={0.12}>
-              <p className="max-w-md text-base leading-7 text-muted md:justify-self-end md:text-lg">
-                From custom eCommerce experiences to high-converting
-                business websites, we build digital products around
-                the way you work.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="mt-14 grid gap-5 lg:grid-cols-[1.45fr_1fr]">
-            {SERVICES.slice(0, 2).map((s, i) => (
-              <DirectionalReveal
-                key={s.title}
-                direction={i === 0 ? "left" : "right"}
-                delay={i * 140}
-                className="h-full"
-              >
-                <Spotlight className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-line-2 bg-[#101116] p-3 transition-all duration-500 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-[0_20px_70px_-35px_rgba(59,130,246,0.25)] sm:rounded-[32px] sm:p-4">
-                  <div className="relative h-[220px] overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0b0c10] sm:h-[260px] lg:h-[280px]">
-                    <div className="absolute right-3 top-3 z-10 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 font-mono text-[10px] tracking-wider text-white/70 backdrop-blur">
-                      {i === 0
-                        ? "01 / CUSTOM ECOMMERCE"
-                        : "02 / SHOPIFY"}
-                    </div>
-
-                    <div className="h-full transition-transform duration-700 ease-out group-hover:scale-[1.025]">
-                      <ServiceVisual kind={s.visual} />
-                    </div>
-                  </div>
-
-                  <div className="relative flex flex-1 flex-col px-3 pb-3 pt-6 sm:px-4 sm:pb-4 sm:pt-7">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.17em] text-blue-400">
-                          {i === 0
-                            ? "Built around your brand"
-                            : "Simple to manage"}
-                        </p>
-
-                        <h3 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                          {s.title}
-                        </h3>
-                      </div>
-
-                      <span
-                        aria-hidden="true"
-                        className="grid size-10 shrink-0 place-items-center rounded-full border border-white/10 text-white/60 transition-all duration-300 group-hover:border-blue-400/50 group-hover:bg-blue-500 group-hover:text-white"
-                      >
-                        ↗
-                      </span>
-                    </div>
-
-                    <p className="mt-3 max-w-xl text-sm leading-6 text-white/55 sm:text-[15px]">
-                      {s.text}
-                    </p>
-
-                    <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                      {s.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-white/[0.08] bg-white/[0.035] px-3 py-1.5 text-[11px] text-white/60"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </Spotlight>
-              </DirectionalReveal>
-            ))}
-          </div>
-
-          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.slice(2).map((s, i) => {
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((s, i) => {
               const directions = [
-                "top",
-                "bottom",
-                "right",
-              ] as const;
+                { x: -120, y: 0 },
+                { x: 120, y: 0 },
+                { x: 0, y: 100 },
+                { x: -120, y: 0 },
+                { x: 120, y: 0 },
+              ];
 
               return (
-                <DirectionalReveal
+                <Reveal
                   key={s.title}
-                  direction={directions[i]}
-                  delay={i * 150}
-                  className="h-full"
+                  x={directions[i].x}
+                  y={directions[i].y}
+                  delay={i * 0.12}
+                  className={s.wide ? "sm:col-span-2" : ""}
                 >
-                  <Spotlight className="group relative flex h-full flex-col overflow-hidden rounded-[26px] border border-line-2 bg-[#101116] p-3 transition-all duration-500 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-[0_18px_55px_-35px_rgba(59,130,246,0.3)] sm:p-4">
-                    <div className="relative h-[185px] overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0b0c10] sm:h-[200px]">
-                      <div className="absolute right-3 top-3 z-10 rounded-full border border-white/10 bg-black/60 px-2.5 py-1 font-mono text-[9px] text-white/60 backdrop-blur">
-                        0{i + 3} / SERVICE
-                      </div>
-
-                      <div className="h-full transition-transform duration-700 ease-out group-hover:scale-[1.035]">
-                        <ServiceVisual kind={s.visual} />
-                      </div>
+                  <Spotlight className="group flex h-full flex-col rounded-3xl border border-line-2 bg-surface p-3 transition-colors duration-300 hover:border-accent/40">
+                    <div className="h-[220px]">
+                      <ServiceVisual kind={s.visual} />
                     </div>
 
-                    <div className="relative flex flex-1 flex-col px-2 pb-2 pt-6 sm:px-3 sm:pb-3">
-                      <div className="flex items-start justify-between gap-3">
-                        <h3 className="text-xl font-semibold tracking-tight text-white">
-                          {s.title}
-                        </h3>
+                    <div className="flex flex-1 flex-col px-4 pb-4 pt-6">
+                      <h3 className="text-2xl font-semibold tracking-tight">
+                        {s.title}
+                      </h3>
 
-                        <span
-                          aria-hidden="true"
-                          className="grid size-8 shrink-0 place-items-center rounded-full border border-white/10 text-sm text-white/50 transition-all duration-300 group-hover:border-blue-400/50 group-hover:bg-blue-500 group-hover:text-white"
-                        >
-                          ↗
-                        </span>
-                      </div>
-
-                      <p className="mt-3 text-sm leading-6 text-white/55">
+                      <p className="mt-3 text-[15px] leading-relaxed text-muted">
                         {s.text}
                       </p>
 
-                      <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                        {s.tags.map((tag) => (
+                      <div className="mt-auto flex flex-wrap gap-1.5 pt-6">
+                        {s.tags.map((t) => (
                           <span
-                            key={tag}
-                            className="rounded-full border border-white/[0.08] bg-white/[0.035] px-2.5 py-1.5 text-[10px] text-white/60"
+                            key={t}
+                            className="rounded-full bg-white/[0.05] px-2.5 py-1 font-mono text-[11px] text-cream/60"
                           >
-                            {tag}
+                            {t}
                           </span>
                         ))}
                       </div>
-
-                      <div className="mt-5 h-px w-full bg-white/[0.07] transition-colors duration-300 group-hover:bg-blue-500/40" />
                     </div>
                   </Spotlight>
-                </DirectionalReveal>
+                </Reveal>
               );
             })}
           </div>
-
-          <Reveal delay={0.2}>
-            <div className="mt-8 flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm text-white/45">
-                One team. The right solution for your business.
-              </p>
-
-              <Link
-                href="#process"
-                className="inline-flex items-center gap-2 text-sm text-blue-400 transition-colors hover:text-blue-300"
-              >
-                See how we work
-                <ArrowRight className="size-4" />
-              </Link>
-            </div>
-          </Reveal>
         </div>
       </section>
 
       {/* ============ STACK ============ */}
-      <section
-        id="stack"
-        className="relative scroll-mt-20 overflow-hidden border-y border-line py-24 md:py-36"
-      >
+      <section id="stack" className="relative scroll-mt-20 overflow-hidden border-y border-line py-16 sm:py-20 md:py-36">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_60%_60%_at_70%_50%,#000,transparent)]"
         />
 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute right-[-10%] top-1/2 size-[520px] -translate-y-1/2 rounded-full bg-accent/15 blur-[130px]"
-        />
+        <div aria-hidden="true" className="pointer-events-none absolute right-[-20%] top-1/2 size-[360px] -translate-y-1/2 rounded-full bg-accent/15 blur-[110px] sm:right-[-10%] sm:size-[520px] sm:blur-[130px]" />
 
-        <div className="wrap relative grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div>
-            <Reveal>
-              <div className="eyebrow mb-5">
-                Our stack
-              </div>
+        <div className="wrap relative min-w-0">
+          <Reveal>
+            <div className="eyebrow mb-4 sm:mb-5">Our stack</div>
+            <h2 className="w-full max-w-full text-[clamp(1.85rem,6.2vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.05em] sm:text-[clamp(2.2rem,5vw,3.5rem)] md:whitespace-nowrap">
+              Next.js or Shopify. <span className="serif-i text-accent">Your pick.</span>
+            </h2>
+          </Reveal>
 
-              <h2 className="text-[clamp(2.5rem,6vw,5.25rem)] font-semibold leading-[0.95] tracking-[-0.045em]">
-                <LetterReveal>
-                  Next.js or Shopify.
-                </LetterReveal>{" "}
-                <LetterReveal
-                  className="serif-i text-accent"
-                  delay={300}
-                >
-                  Your pick.
-                </LetterReveal>
-              </h2>
+          <div className="mt-9 grid min-w-0 grid-cols-1 gap-9 sm:mt-12 sm:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-14">
+            <div className="min-w-0 w-full">
+              <Reveal>
+                <p className="max-w-lg text-base leading-relaxed text-muted sm:text-lg">
+                  The same tools top brands around the world use. We help you pick the right one for how you sell.
+                </p>
+              </Reveal>
 
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
-                The same tools top brands around the world use.
-                We help you pick the right one for how you sell.
-              </p>
-            </Reveal>
-
-            <div className="mt-10 space-y-6">
-              {WHY_NEXT.map((w, i) => (
-                <Reveal key={w.title} delay={i * 0.06}>
-                  <div className="flex gap-5 border-t border-line pt-6">
-                    <Icon name={w.icon} />
-
-                    <div>
-                      <h3 className="text-lg font-medium">
-                        {w.title}
-                      </h3>
-                      <p className="mt-1.5 text-[15px] leading-relaxed text-muted">
-                        {w.text}
-                      </p>
+              <div className="mt-7 space-y-5 sm:mt-10 sm:space-y-6">
+                {WHY_NEXT.map((w, i) => (
+                  <Reveal key={w.title} delay={i * 0.06}>
+                    <div className="flex min-w-0 gap-3 border-t border-line pt-5 sm:gap-5 sm:pt-6">
+                      <Icon name={w.icon} />
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-base font-medium sm:text-lg">{w.title}</h3>
+                        <p className="mt-1.5 text-sm leading-relaxed text-muted sm:text-[15px]">
+                          {w.text}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-
-          <Reveal delay={0.1}>
-            <div className="relative">
-              <CodeWindow />
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {STACK.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-line-2 bg-ink/60 px-4 py-2 font-mono text-[12px] text-cream/80 backdrop-blur"
-                  >
-                    {s}
-                  </span>
+                  </Reveal>
                 ))}
               </div>
             </div>
-          </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="relative min-w-0 w-full max-w-full overflow-hidden [&_pre]:max-w-full [&_pre]:overflow-x-auto [&_pre]:text-[11px] sm:[&_pre]:text-xs">
+                <CodeWindow />
+
+                <div className="mt-4 flex min-w-0 flex-wrap gap-2 sm:mt-5">
+                  {STACK.map((s) => (
+                    <span
+                      key={s}
+                      className="max-w-full rounded-full border border-line-2 bg-ink/60 px-3 py-2 font-mono text-[11px] text-cream/80 backdrop-blur sm:px-4 sm:text-[12px]"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -529,26 +322,12 @@ export default function Home() {
       <section className="py-24 md:py-36">
         <div className="wrap">
           <Reveal>
-            <div className="eyebrow mb-5">
-              Made for Bangladesh
-            </div>
-
+            <div className="eyebrow mb-5">Made for Bangladesh</div>
             <h2 className="max-w-4xl text-[clamp(2.5rem,6vw,5.25rem)] font-semibold leading-[0.95] tracking-[-0.045em]">
-              <LetterReveal>Built for how</LetterReveal>{" "}
-              <LetterReveal
-                className="serif-i text-cream/60"
-                delay={300}
-              >
-                people here
-              </LetterReveal>{" "}
-              <LetterReveal delay={560}>
-                shop.
-              </LetterReveal>
+              Built for how <span className="serif-i text-cream/60">people here</span> shop.
             </h2>
-
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              Cash on delivery, local payments, courier links and chat.
-              The things your buyers expect are built in from day one.
+              Cash on delivery, local payments, courier links and chat. The things your buyers expect are built in from day one.
             </p>
           </Reveal>
         </div>
@@ -559,7 +338,6 @@ export default function Home() {
               <Pill key={`a${i}`}>{t}</Pill>
             ))}
           </div>
-
           <div className="flex w-max animate-marquee-rev gap-4">
             {[...LOCAL_B, ...LOCAL_B].map((t, i) => (
               <Pill key={`b${i}`}>{t}</Pill>
@@ -569,20 +347,196 @@ export default function Home() {
       </section>
 
       {/* ============ PROCESS ============ */}
-     
-      {/* ============ PROCESS ============ */}
-      <BlueProcess />
+      <style>{`
+        #process {
+          view-timeline-name: --process-scroll;
+          view-timeline-axis: block;
+        }
 
+        #process .process-progress-fill {
+          transform: scaleX(0);
+          transform-origin: left center;
+          animation: process-line-grow linear both;
+          animation-timeline: --process-scroll;
+          animation-range: entry 8% exit 88%;
+        }
+
+        @keyframes process-line-grow {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+
+        #process .process-step-dot {
+          background: #17191f;
+          border-color: #343943;
+          color: #888;
+          box-shadow: none;
+          animation: process-dot-activate linear both;
+          animation-timeline: --process-scroll;
+        }
+
+        #process .process-step-dot:nth-child(1) {
+          animation-range: entry 8% entry 42%;
+        }
+        #process .process-step-dot:nth-child(2) {
+          animation-range: entry 18% entry 52%;
+        }
+        #process .process-step-dot:nth-child(3) {
+          animation-range: entry 28% entry 62%;
+        }
+        #process .process-step-dot:nth-child(4) {
+          animation-range: entry 38% entry 72%;
+        }
+
+        @keyframes process-dot-activate {
+          from {
+            background: #17191f;
+            border-color: #343943;
+            color: #888;
+            box-shadow: none;
+          }
+          to {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: #fff;
+            box-shadow: 0 0 0 7px rgba(59,130,246,.10), 0 0 25px rgba(59,130,246,.35);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          #process .process-progress-fill,
+          #process .process-step-dot {
+            animation: none;
+          }
+          #process .process-progress-fill {
+            transform: scaleX(1);
+          }
+          #process .process-step-dot {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: #fff;
+          }
+        }
+      `}</style>
+
+      <section
+        id="process"
+        className="relative scroll-mt-20 overflow-hidden border-t border-line py-20 md:py-28"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_55%,rgba(45,110,255,0.07),transparent_65%)]"
+        />
+
+        <div className="wrap relative">
+          <Reveal>
+            <div className="eyebrow mb-5">How we work</div>
+
+            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <h2 className="max-w-2xl text-[clamp(2.8rem,6vw,5rem)] font-semibold leading-[0.95] tracking-[-0.05em]">
+                Four steps.
+                <br />
+                <span className="serif-i text-cream/60">No mystery.</span>
+              </h2>
+
+              <p className="max-w-sm pb-2 text-base leading-relaxed text-muted md:text-right">
+                You always know what comes next.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* SCROLL-LINKED TIMELINE */}
+          <div className="relative mt-16">
+            <div className="absolute left-[12.5%] right-[12.5%] top-[22px] hidden h-[2px] bg-line-2 lg:block" />
+
+            <div className="absolute left-[12.5%] right-[12.5%] top-[22px] hidden h-[2px] lg:block">
+              <div className="process-progress-fill h-full w-full bg-accent shadow-[0_0_12px_rgba(59,130,246,0.65)]" />
+            </div>
+
+            <div className="relative mb-8 hidden grid-cols-4 lg:grid">
+              {[1, 2, 3, 4].map((number) => (
+                <div key={number} className="flex justify-center">
+                  <div className="process-step-dot relative z-10 grid size-11 place-items-center rounded-full border-[5px] border-ink text-sm font-bold">
+                    {number}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  title: "Audit",
+                  description: "We check your store, ads and tracking.",
+                  result: "A short list of what to fix first.",
+                },
+                {
+                  title: "Plan",
+                  description: "We agree on the work, the price and the dates.",
+                  result: "A clear plan in writing.",
+                },
+                {
+                  title: "Build",
+                  description: "We build the store and set up the ads.",
+                  result: "A live store and running ads.",
+                },
+                {
+                  title: "Grow",
+                  description: "We run it and improve it every week.",
+                  result: "A simple report every week.",
+                },
+              ].map((step, i) => (
+                <Reveal key={step.title} delay={i * 0.1} x={0} y={35}>
+                  <article className="group relative flex h-full min-h-[225px] flex-col overflow-hidden rounded-[24px] border border-accent/30 bg-[linear-gradient(145deg,rgba(35,65,115,0.18),rgba(18,20,27,0.85))] p-6 transition-all duration-500 hover:-translate-y-2 hover:border-accent/70 hover:shadow-[0_15px_45px_rgba(40,100,255,0.10)] md:p-7">
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-accent/10 blur-[55px] transition-opacity duration-500 group-hover:bg-accent/25"
+                    />
+
+                    <div className="mb-5 flex items-center justify-between lg:hidden">
+                      <span className="grid size-10 place-items-center rounded-full border border-accent/40 bg-accent/10 text-sm font-bold text-accent">
+                        {i + 1}
+                      </span>
+                      <span className="font-mono text-xs text-muted">
+                        STEP 0{i + 1}
+                      </span>
+                    </div>
+
+                    <h3 className="relative text-[23px] font-semibold tracking-tight text-cream">
+                      {step.title}
+                    </h3>
+
+                    <p className="relative mt-2.5 text-[15px] leading-relaxed text-cream/65">
+                      {step.description}
+                    </p>
+
+                    <div className="relative my-5 h-px w-full bg-line-2" />
+
+                    <div className="relative mt-auto flex items-start gap-3">
+                      <span className="mt-0.5 text-lg font-bold text-accent">✓</span>
+                      <div>
+                        <span className="font-mono text-[10px] font-semibold tracking-[0.15em] text-accent">
+                          YOU GET
+                        </span>
+                        <p className="mt-1 text-[13px] leading-relaxed text-cream/90">
+                          {step.result}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ============ CTA ============ */}
       <section className="pb-24 md:pb-32">
         <div className="wrap">
           <Reveal>
             <div className="relative isolate overflow-hidden rounded-[32px] border border-line-2 bg-surface px-6 py-20 text-center md:px-16 md:py-28">
-              <div
-                aria-hidden="true"
-                className="absolute left-1/2 top-1/2 -z-10 size-[900px] -translate-x-1/2 -translate-y-1/2"
-              >
+              <div aria-hidden="true" className="absolute left-1/2 top-1/2 -z-10 size-[900px] -translate-x-1/2 -translate-y-1/2">
                 <div
                   className="size-full animate-spin-slow rounded-full blur-[90px]"
                   style={{
@@ -592,26 +546,12 @@ export default function Home() {
                 />
               </div>
 
-              <div
-                aria-hidden="true"
-                className="absolute inset-[1px] -z-10 rounded-[31px] bg-surface/55"
-              />
+              <div aria-hidden="true" className="absolute inset-[1px] -z-10 rounded-[31px] bg-surface/55" />
 
-              <div className="eyebrow mb-6">
-                Next project
-              </div>
-
+              <div className="eyebrow mb-6">Next project</div>
               <h2 className="mx-auto max-w-4xl text-[clamp(2.5rem,7vw,6rem)] font-semibold leading-[0.95] tracking-[-0.05em]">
-                <LetterReveal>
-                  Have a brand?
-                </LetterReveal>{" "}
-                <br className="hidden sm:block" />
-                <LetterReveal
-                  className="serif-i text-accent"
-                  delay={280}
-                >
-                  Let's build its store.
-                </LetterReveal>
+                Have a brand? <br className="hidden sm:block" />
+                <span className="serif-i text-accent">Let&apos;s build its store.</span>
               </h2>
 
               <p className="mx-auto mt-6 max-w-md text-lg text-cream/70">
